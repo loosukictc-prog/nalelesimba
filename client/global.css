@@ -1,0 +1,150 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+   */
+  :root {
+    --background: 48 50% 98%;
+    --foreground: 20 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 15%;
+
+    --primary: 38 68% 57%;
+    --primary-foreground: 48 50% 98%;
+
+    --secondary: 82 45% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 48 30% 85%;
+    --muted-foreground: 20 20% 45%;
+
+    --accent: 38 68% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 48 30% 90%;
+    --input: 48 30% 95%;
+    --ring: 38 68% 57%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 20 20% 15%;
+    --sidebar-primary: 38 68% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 82 45% 52%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 48 30% 90%;
+    --sidebar-ring: 38 68% 57%;
+  }
+
+  .dark {
+    --background: 20 20% 12%;
+    --foreground: 48 50% 98%;
+
+    --card: 20 20% 18%;
+    --card-foreground: 48 50% 98%;
+
+    --popover: 20 20% 18%;
+    --popover-foreground: 48 50% 98%;
+
+    --primary: 38 68% 57%;
+    --primary-foreground: 20 20% 12%;
+
+    --secondary: 82 45% 52%;
+    --secondary-foreground: 20 20% 12%;
+
+    --muted: 20 20% 30%;
+    --muted-foreground: 48 30% 70%;
+
+    --accent: 38 68% 57%;
+    --accent-foreground: 20 20% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 20% 25%;
+    --input: 20 20% 25%;
+    --ring: 38 68% 57%;
+    --sidebar-background: 20 20% 12%;
+    --sidebar-foreground: 48 50% 98%;
+    --sidebar-primary: 38 68% 57%;
+    --sidebar-primary-foreground: 20 20% 12%;
+    --sidebar-accent: 82 45% 52%;
+    --sidebar-accent-foreground: 20 20% 12%;
+    --sidebar-border: 20 20% 25%;
+    --sidebar-ring: 38 68% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+    @apply font-bold tracking-tight;
+  }
+
+  :where(p, span, li, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .container-safari {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:opacity-90 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl font-bold text-foreground mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground mb-12;
+  }
+}
